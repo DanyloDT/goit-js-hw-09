@@ -73,9 +73,7 @@ function convertMs(diff) {
   return { days, hours, minutes, seconds };
 }
 
-addLeadingZero = (value) => {
-    return String(value).padStart(2, '0')
-}
+addLeadingZero = (value) => {String(value).padStart(2, '0')}
 
 
 startBtn.addEventListener('click', onTimer)
