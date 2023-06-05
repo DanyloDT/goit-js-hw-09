@@ -51,7 +51,10 @@ const onTimer = () => {
         secondsEl.textContent = addLeadingZero(seconds);
 
     }, 1000)
-
+    
+    addLeadingZero = (value) => {
+    return String(value).padStart(2, '0')
+}
 }
 
 function convertMs(diff) {
@@ -73,7 +76,7 @@ function convertMs(diff) {
   return { days, hours, minutes, seconds };
 }
 
-addLeadingZero = (value) => {String(value).padStart(2, '0')}
+
 
 
 startBtn.addEventListener('click', onTimer)
