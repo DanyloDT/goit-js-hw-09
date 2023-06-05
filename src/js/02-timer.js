@@ -45,16 +45,13 @@ const onTimer = () => {
 
         const { days, hours, minutes, seconds } = convertMs(diff)
         
-        daysEl.textContent = addLeadingZero(days);
-        hoursEl.textContent = addLeadingZero(hours);
-        minutesEl.textContent = addLeadingZero(minutes);
-        secondsEl.textContent = addLeadingZero(seconds);
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
 
     }, 1000)
-    
-    addLeadingZero = (value) => {
-    return String(value).padStart(2, '0')
-}
+
 }
 
 function convertMs(diff) {
@@ -76,7 +73,9 @@ function convertMs(diff) {
   return { days, hours, minutes, seconds };
 }
 
-
+// addLeadingZero = (value) => {
+//     return String(value).padStart(2, '0')
+// }
 
 
 startBtn.addEventListener('click', onTimer)
